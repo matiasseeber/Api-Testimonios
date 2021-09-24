@@ -13,10 +13,12 @@ export async function deleteById(id) {
         .then(function(data) {
             const testimonios = JSON.parse(data);
             const testimonio = testimonios.find(t => t.id == id);
+            if (testimonio == undefined)
+                return null
             testimonio.active = false;
             return fs.promises.writeFile("./src/data/testimonios.json", JSON.stringify(testimonios))
                 .then(function() {
-                    return testimonio //hasta aca llega bien
+                    return testimonio
                 })
         })
 }
@@ -27,6 +29,8 @@ export async function activateById(id) {
             const testimonios = JSON.parse(data);
             const testimonio = testimonios.find(t => t.id == id);
             testimonio.active = true;
+            if (testimonio == undefined)
+                return null
             return fs.promises.writeFile("./src/data/testimonios.json", JSON.stringify(testimonios))
                 .then(function() {
                     return testimonio

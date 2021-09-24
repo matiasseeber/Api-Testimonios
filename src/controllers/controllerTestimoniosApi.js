@@ -13,8 +13,7 @@ export function getAll(req, res) {
 export function deleteById(req, res) {
     repo.deleteById(req.params.id)
         .then(function(juego) {
-            console.log(juego)
-            if (juego != undefined)
+            if (!juego)
                 res.status(200).json(juego);
             else
                 res.status(404).json({ err: 404, msg: "No se pudo encontrar el registro" })
@@ -29,7 +28,7 @@ export function deleteById(req, res) {
 export function patchById(req, res) {
     repo.activateById(req.params.id)
         .then(function(juego) {
-            if (juego != undefined)
+            if (!juego)
                 res.status(200).json(juego);
             else
                 res.status(404).json({ err: 404, msg: "No se pudo encontrar el registro" })
