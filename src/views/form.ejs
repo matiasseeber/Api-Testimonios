@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Testimonio</title>
+    <link rel="stylesheet" href="css/styleForm.css">
+    <link rel="stylesheet" href="css/navBar.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="/" class="nav-logo">LOGO</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#testimonies" class="nav-link">Testimonies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <form action="http://localhost/form.ejs" method="POST" autocomplete="off">
+            <div><input type="text" placeholder="Nombre" name="name" required></div>
+            <div><input type="text" placeholder="Apellido" name="surname" required></div>
+            <div class="divLinkedIn"><input type="text" name="linkedin" placeholder="Linkedin" required></div>
+            <div class="divComments"><textarea name="comments" id="comments" rows="3" placeholder="Comentarios" required></textarea></div>
+            <div>
+                <button type="submit">ENVIAR</button>
+            </div>
+            <div><button type="reset">BORRAR TODO</button></div>
+            <p id="message">
+                <%= msg %>
+            </p>
+        </form>
+    </section>
+    <script src="/js/navBar.js"></script>
+    <script src="/js/message.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonios API</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navBar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/17174b092b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">LOGO</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonies" class="nav-link">Testimonies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section class="sectionImg" id="home">
+        <div class="Overlay">
+            <h1>FULLSTACK<br>DEVELOPMENT</h1>
+            <a href="">Learn more</a>
+        </div>
+    </section>
+    <section class="sectionAbout" id="about">
+        <div class="leftDiv">
+            <div class="divAboutTitle">
+                <div class="title">
+                    <h1>About</h1>
+                </div>
+                <div class="triangle">
+                </div>
+            </div>
+            <div class="divText">
+                <div class="whoWeAre">
+                    <p>WHO WE ARE</p>
+                </div>
+                <div class="title">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                </div>
+                <div class="paragraph">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusamus delectus illum debitis quasi dolorum soluta, atque nesciunt dolores esse cum ullam, quo necessitatibus, doloribus non tempore aperiam temporibus quis.</p>
+                </div>
+                <div class="divBtn">
+                    <a href="">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <div class="rightDiv">
+            <div>
+                <img src="img/hacker-man-laptop (1).jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="sectionTestimonies" id="testimonies">
+        <div class="divAboutTitle">
+            <div class="title">
+                <!-- <h1>Testimonies</h1> -->
+                <div class="addTestimony"><a href="form.ejs" target="_BLANK">Agregar Testimonio</a></div>
+            </div>
+            <div class="triangle">
+            </div>
+        </div>
+        <ul id="slider">
+            <% for(let i = 0; i < items.length; i++){
+                let item = items[i];
+                %>
+                <li class="divText">
+                    <p>
+                        <%= item.comments%>
+                    </p>
+                    <div class="divLeft">
+                        <p>
+                            <%= item.name %>
+                                <%= item.surname%>
+                        </p>
+                        <a href="<%= item.linkedin%>"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </li>
+                <%
+            } %>
+        </ul>
+        <div class="bottomDiv">
+            <div class="divArrows">
+                <div id="previousSlide"><i class="fas fa-arrow-left"></i></div>
+                <div id="nextSlide"><i class="fas fa-arrow-right"></i></div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="redes"><a href=""><i class="fab fa-linkedin-in"></i></a>
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="rights">Lorem, ipsum @ all rights reserved.</div>
+    </footer>
+    <script src="/js/navBar.js"></script>
+    <script src="/js/slider.js"></script>
+</body>
+
+</html>
